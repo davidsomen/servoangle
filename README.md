@@ -5,6 +5,8 @@ A library to be used in conjunction with ServoBlaster for the Raspberry Pi for u
 
 ServoBlaster can be found here: git://github.com/richardghirst/PiBits.git
 
+To install, clone the repository and run 'make' in the repository directory to compile automagically. Moving the servoanglelib.o library file to /usr/local/lib and servoanglelib.h header file to /usr/local/include should make the library globally available.
+
 servoanglelib
 ===============
 
