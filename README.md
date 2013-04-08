@@ -10,11 +10,10 @@ To install, clone the repository and run 'make' in the repository directory to c
 servoanglelib
 ===============
 
-The servo angle library file contains 3 functions:
+The servo angle library file contains 2 public functions:
 
   - servoAngle(char *servo, char *angle) // Converts angle between 0-180 to pulse width and writes to selected servo
   - servoOff(char *servo) // Sets pulse width of servo to 0, turning it off
-  - writeToServo(char *servo, int angle) // Private, writes pulse width to servo
 
 sweepd
 ======
