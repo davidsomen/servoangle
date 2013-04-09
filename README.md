@@ -21,9 +21,9 @@ sweepd
 A daemon (or will be soon. Can run in background using sweepd &) that sweeps the servo through several steps at varying angles. Has 3 different usage syntax:
 
   - sweepd                                        // Uses config file
-  - sweepd <delay (sec)>                          // Set delay, rest is default
-  - sweepd <delay (sec)> <steps>                  // Set delay and number of steps, rest is default
-  - sweepd <delay (sec)> <angle1, angle2, ...>    // Set delay and limitless explicit angles to sweep to
+  - sweepd (delay in sec)                       // Set delay, rest is default
+  - sweepd (delay in sec) (steps)                 // Set delay and number of steps, rest is default
+  - sweepd (delay in sec) (angle1, angle2, ...)    // Set delay and limitless explicit angles to sweep to
 
 Config file sets the following:
 
