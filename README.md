@@ -13,12 +13,24 @@ servoanglelib
 The servo angle library file contains 2 public functions:
 
   - servoAngle(char *servo, char *angle) // Converts angle between 0-180 to pulse width and writes to selected servo
-  - servoOff(char *servo) // Sets pulse width of servo to 0, turning it off
+  - servoOff(char *servo)                // Sets pulse width of servo to 0, turning it off
 
 sweepd
 ======
 
-A daemon (or will be soon. Can run in background using sweepd &) that sweeps the servo from 0, 90 to 180 and back. Takes one argument that defines the delay in seconds between changing angle.
+A daemon (or will be soon. Can run in background using sweepd &) that sweeps the servo through several steps at varying angles. Has 3 different usage syntax:
+
+  - sweepd                                        // Uses config file
+  - sweepd <delay (sec)>                          // Set delay, rest is default
+  - sweepd <delay (sec)> <steps>                  // Set delay and number of steps, rest is default
+  - sweepd <delay (sec)> <angle1, angle2, ...>    // Set delay and limitless explicit angles to sweep to
+
+Config file sets the following:
+
+  - servo   // Servo to use
+  - delay   // Delay in seconds between changing angle
+  - steps   // Number of angles to equally spread through from 0 to 180
+  - reverse // Takes "yes" to reverse the angles on the sweep back or to start over
 
 servoangle
 ============
