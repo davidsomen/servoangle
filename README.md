@@ -1,4 +1,4 @@
-servoangle
+Servo Angle
 ==========
 
 A library to be used in conjunction with ServoBlaster for the Raspberry Pi for using degrees rather than pulse widths. Currently, SerboBlaster daemon (servod) must be running beforehand for servoangle to work.
@@ -10,13 +10,17 @@ To install, clone the repository and run 'make' in the repository directory to c
 servoanglelib
 ===============
 
-The servo angle library file contains 3 functions:
+The servo angle library file contains 2 public functions:
 
   - servoAngle(char *servo, char *angle) // Converts angle between 0-180 to pulse width and writes to selected servo
   - servoOff(char *servo) // Sets pulse width of servo to 0, turning it off
-  - writeToServo(char *servo, int angle) // Private, writes pulse width to servo
 
-servoangle.c
+sweepd
+======
+
+A daemon (or will be soon. Can run in background using sweepd &) that sweeps the servo from 0, 90 to 180 and back. Takes one argument that defines the delay in seconds between changing angle.
+
+servoangle
 ============
 
 A test command line program that takes 2 arguments, servo and angle.
