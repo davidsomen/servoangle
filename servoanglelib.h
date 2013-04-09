@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int servoAngle(char *servo, char *angle);
-extern int servoOff(char *servo);
+extern int servoAngle(int servo, int angle);
+extern int servoOff(int servo);
 
 #endif

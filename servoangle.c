@@ -1,13 +1,20 @@
-#include <servoanglelib.h>
+#include "servoanglelib.h"
 
 int main(int argc, char *argv[])
 {
 	if(argc == 3)
 	{
-        if(!strcmp(argv[2], "off"))
-            servoOff(argv[1]);
+        char *servo = argv[1];
+        char *angle = argv[2];
+        
+        if(!strcmp(angle, "off"))
+        {
+            servoOff(atoi(servo));
+        }
         else
-            servoAngle(argv[1], argv[2]);
+        {
+            servoAngle(atoi(servo), atoi(angle));
+        }
         
 		return 0;
 	}

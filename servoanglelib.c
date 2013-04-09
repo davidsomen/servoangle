@@ -1,6 +1,6 @@
-#include <servoanglelib.h>
+#include "servoanglelib.h"
 
-int writeToServo(char *cServo, int pulse)
+int writeToServo(int servo, int pulse)
 {
     // Open file
     FILE *fp = fopen("/dev/servoblaster", "w");
@@ -11,19 +11,16 @@ int writeToServo(char *cServo, int pulse)
     }
     
 	// Write value to file
-	fprintf(fp, "%s=%i\n", cServo, pulse);
+	fprintf(fp, "%i=%i\n", servo, pulse);
     
 	// Close file
 	fclose(fp);
     
-    return 1;
+    return 0;
 }
 
-int servoAngle(char *cServo, char *cAngle)
+int servoAngle(int servo, int angle)
 {
-    // Convert angle to int
-    int angle = atoi(cAngle);
-        
     // Check boundaries
     if (angle < 0 || angle > 180)
     {
@@ -34,12 +31,13 @@ int servoAngle(char *cServo, char *cAngle)
     // Convert angle to pulse width
     int pulse = angle + 60;
     
-    if (writeToServo(cServo, pulse))
-        return 1;
+    writeToServo(servo, pulse);
+    
+    return 0;
 }
 
-int servoOff(char *cServo)
+int servoOff(int servo)
 {
-    if(writeToServo(cServo, 0))
-        return 1;
+    writeToServo(servo, 0);
+    return 0;
 }
